@@ -5,7 +5,7 @@ import "weather-icons/css/weather-icons.css";
 import Form from "./form";
 import "./App.css";
 
-const API_Key = "03682cacdb4175e38fb2811f90b98410";
+const API_Key =  process.env.REACT_APP_WEATHER_API_KEY;
 
 class App extends Component {
   constructor() {
@@ -73,7 +73,7 @@ class App extends Component {
       const city = e.target.elements.city.value;
 
       const api_call = await fetch(
-        `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_Key}`
+        `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_Key}`
       );
 
       const response = await api_call.json();
@@ -95,7 +95,7 @@ class App extends Component {
 
   getWeatherWithLatLng = async pos => {
     const api_call = await fetch(
-      `http://api.openweathermap.org/data/2.5/weather?lat=${pos.coords.latitude}&lon=${pos.coords.longitude}&appid=${API_Key}`
+      `https://api.openweathermap.org/data/2.5/weather?lat=${pos.coords.latitude}&lon=${pos.coords.longitude}&appid=${API_Key}`
     );
 
     const response = await api_call.json();
