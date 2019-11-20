@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Weather from "./weather";
+import Weather from "./components/weather";
 import "weather-icons/css/weather-icons.css";
-import Form from "./form";
-import "./App.css";
+import Form from "./components/form";
 
 const API_Key = process.env.REACT_APP_WEATHER_API_KEY;
 
@@ -32,14 +31,15 @@ class App extends Component {
 
   getWeather = async e => {
     try {
+
       e.preventDefault();
 
       const city = e.target.elements.city.value;
-
       const api_call = await fetch(
         `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${API_Key}`
       );
 
+      
       const response = await api_call.json();
       const dailyData = response.list.filter(reading =>
         reading.dt_txt.includes("18:00:00")
@@ -56,6 +56,8 @@ class App extends Component {
   };
 
   getWeatherWithLatLng = async pos => {
+
+    
     const api_call = await fetch(
       `https://api.openweathermap.org/data/2.5/forecast?lat=${pos.coords.latitude}&lon=${pos.coords.longitude}&appid=${API_Key}`
     );
@@ -129,7 +131,7 @@ class App extends Component {
             <h2 className="city-header">{this.state.city}</h2>
           ) : null}
           {this.state.city ? (
-            <div className="row justify-content-center">
+            <div className="cards-container">
               {this.formatDayCards()}
             </div>
           ) : null}

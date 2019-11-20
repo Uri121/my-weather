@@ -1,0 +1,125 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: url("../assets/clouds.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    margin: 0;
+    font-family: sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: url("../assets/clouds-for-phone.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .cards-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.box-1 {
+  margin-top: 20px;
+  margin-bottom: 8px;
+}
+
+.box-2 {
+  margin-top: 20px;
+}
+
+.city-header {
+  color: black;
+  background-color: #f0f1f3c7;
+  border-radius: 6px;
+  padding: 5px;
+  margin-bottom: 20px;
+  border: 1px solid #0000003b;
+}
+
+form{
+  margin-bottom: 2rem;
+}
+
+form input[name="city"]{
+  background-color: transparent;
+  color: white;
+  border-bottom: 2px solid whitesmoke;
+  border-radius: 3px;
+}
+
+form input:focus{
+  background-color: transparent;
+  box-shadow: none!important;
+}
+
+.card{
+  width: 200px;
+  height: 270px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  text-align: center;
+  opacity: 0.9;
+  margin-right: 8px;
+
+  
+
+  -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein 2s; /* Firefox < 16 */
+   -ms-animation: fadein 2s; /* Internet Explorer */
+       animation: fadein 2s;
+
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);
+}
+.card-header{
+    background-color: #6495ed26;
+}
+.cards-container{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+}
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+
+
+
