@@ -131,7 +131,7 @@ class App extends Component {
             <h2 className="city-header">{this.state.city}</h2>
           ) : null}
           {this.state.city ? (
-            <div className="cards-container">
+            <div className="row">
               {this.formatDayCards()}
             </div>
           ) : null}
