@@ -6,7 +6,7 @@ body {
   background: url("../assets/clouds-desktop.jpg");
   background-size: cover;
   background-repeat: no-repeat; 
-  height: 100vh;
+  height: 100%;
 }
 
 /* #### iPhone 6 and 6 plus Portrait or Landscape #### */
@@ -33,7 +33,6 @@ body {
     border-radius: 3px;
     font-size: xx-large;
   }
-
 
 }
 
@@ -108,7 +107,7 @@ form input:focus {
 }
 
 .card {
-  width: 200px;
+  width: 210px;
   height: 300px;
  font-size: x-large;
   overflow: hidden;
