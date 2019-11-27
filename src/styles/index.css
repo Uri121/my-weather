@@ -5,8 +5,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background: url("../assets/clouds-desktop.jpg");
   background-size: cover;
-  background-repeat: no-repeat;
-  height: 100%;
+  background-repeat: no-repeat; 
+  height: 100vh;
 }
 
 /* #### iPhone 6 and 6 plus Portrait or Landscape #### */
@@ -19,11 +19,11 @@ body {
     background: url("../assets/clouds.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    height: 100%;
+    height: 100vh;
   }
 
   .btn {
-    font-size: x-large;
+    font-size: xx-large;
   }
 
   form input[name="city"] {
@@ -31,32 +31,9 @@ body {
     color: white;
     border-bottom: 2px solid whitesmoke;
     border-radius: 3px;
-    font-size: x-large;
+    font-size: xx-large;
   }
 
-  .cards-container {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin: 0 auto;
-  }
-
-  .card {
-    width: 40%;
-    height: fit-content;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    transition: 0.3s;
-    text-align: center;
-    opacity: 0.9;
-    margin: 8px;
-    font-size: x-large;
-    border-radius: 13%;
-
-    -webkit-animation: fadein 2s;
-    -moz-animation: fadein 2s;
-    -ms-animation: fadein 2s;
-    animation: fadein 2s;
-  }
 
 }
 
@@ -64,15 +41,39 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 4%;
 }
 
-.box-1 {
-  margin-top: 20px;
-  margin-bottom: 8px;
+.container-checkbox {
+ display: flex;
+ flex-direction: row;
+ justify-content: space-around;
+ align-items: center;
+
 }
 
-.box-2 {
+.container-searchbox {
   margin-top: 20px;
+}
+
+input[type='checkbox'] {
+  -webkit-appearance:none;
+  width: 40px;
+  height: 40px;
+  background:white;
+  border-radius: 30%;
+  overflow: hidden;
+  border:2px solid black;
+  margin-top: 5px;
+}
+input[type='checkbox']:checked {
+background: blue;
+
+}
+#check-label{
+font-size: xx-large;
+margin-left: 8px;
+margin-bottom: 0;
 }
 
 .city-header {
@@ -109,6 +110,7 @@ form input:focus {
 .card {
   width: 200px;
   height: 300px;
+ font-size: x-large;
   overflow: hidden;
   border-radius: 13%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);

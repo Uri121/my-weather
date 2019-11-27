@@ -31,7 +31,6 @@ class App extends Component {
 
   getWeather = async e => {
     try {
-
       e.preventDefault();
 
       const city = e.target.elements.city.value;
@@ -39,7 +38,6 @@ class App extends Component {
         `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${API_Key}`
       );
 
-      
       const response = await api_call.json();
       const dailyData = response.list.filter(reading =>
         reading.dt_txt.includes("18:00:00")
@@ -56,8 +54,6 @@ class App extends Component {
   };
 
   getWeatherWithLatLng = async pos => {
-
-    
     const api_call = await fetch(
       `https://api.openweathermap.org/data/2.5/forecast?lat=${pos.coords.latitude}&lon=${pos.coords.longitude}&appid=${API_Key}`
     );
@@ -107,33 +103,30 @@ class App extends Component {
     return (
       <div className="App">
         <div className="container">
-          <div className="box-1">
-            <div className="custom-control custom-checkbox">
-              <input
-                type="checkbox"
-                className="custom-control-input"
-                id="locationCheck"
-                onChange={this.handleCheckbox}
-              />
-              <label
-                className="custom-control-label"
-                htmlFor="locationCheck"
-                style={{ color: "white" }}
-              >
-                Get Location
-              </label>
-            </div>
+          <div className="container-checkbox">
+            <input
+              type="checkbox"
+              id="locationCheck"
+              onChange={this.handleCheckbox}
+            />
+
+            <label
+              id="check-label"
+              className="text-center"
+              htmlFor="locationCheck"
+              style={{ color: "white" }}
+            >
+              Get Location
+            </label>
           </div>
-          <div className="box-2">
+          <div className="container-searchbox">
             <Form loadWeather={this.getWeather} error={this.state.error} />
           </div>
           {this.state.city ? (
             <h2 className="city-header">{this.state.city}</h2>
           ) : null}
           {this.state.city ? (
-            <div className="row">
-              {this.formatDayCards()}
-            </div>
+            <div className="row">{this.formatDayCards()}</div>
           ) : null}
         </div>
       </div>
